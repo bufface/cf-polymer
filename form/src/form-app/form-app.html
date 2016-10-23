@@ -55,7 +55,7 @@
 
       <form is="iron-form" id="form">
         <div class="card-content">
-          <paper-input label="Email" required type="email"></paper-input>
+          <paper-input label="Email" required type="email" value="{{email}}"></paper-input>
           <paper-input label="Password" required type="password"></paper-input>
         </div>
         
@@ -73,10 +73,22 @@
 
       is: 'form-app',
 
+      properties: {
+        email: {
+          type: String,
+          observer: "_emailChange"
+        }
+      },
+
       ready: function() {
         this.$.login.addEventListener("click", () => {
           this.$.form.submit();
         });
+      },
+
+      _emailChange: function(new_value, old_value) {
+        console.log(new_value);
+        console.log(old_value);
       }
     });
   </script>
