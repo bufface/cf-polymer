@@ -1,4 +1,4 @@
-<link rel="import" href="../paper-input/paper-input.html">
+<link rel="import" href="../paper-button/paper-button.html">
 <link rel="import" href="./nombre-cf.html">
 
 <dom-module id="hola-cf">
@@ -7,8 +7,12 @@
       :host {
         display: block;
       }
+
+      paper-button {
+        background-color: var(--paper-red-500);
+      }
     </style>
-    <paper-input label="Nombre" value="{{name}}"></paper-input>
+    <paper-button raised id="btn">Click</paper-button>
     <h1 id="title">Hola <nombre-cf name="{{name}}"></nombre-cf>, tengo [[edad]]</h1>
   </template>
 
@@ -25,16 +29,28 @@
         }
       },
 
+      listeners: {
+        "nameChanged": "clicked",
+        "click": "clicked"
+      },
+
       created: function() {
       
       },
 
       ready: function() {
-      
+        // this.$btn.addEventListener("click", () => this.clicked());
+        // this.$$("paper-button").addEventListener("click", () => this.clicked());
+        // this.$$("nombre-cf").addEventListener("nameChanged", () => this.clicked());
       },
 
       attached: function() {
         
+      },
+
+      clicked: function(e) {
+        console.log(e.target);
+        this.name = "Hubo click";
       }
     });
   </script>
