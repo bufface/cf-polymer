@@ -8,10 +8,11 @@
 <link rel="import" href="../../bower_components/iron-form/iron-form.html">
 <link rel="import" href="./hidding-behavior.html">
 <link rel="import" href="./form-button.html">
+<link rel="import" href="./styles-module.html">
 
 <dom-module id="form-app">
   <template>
-    <style>
+    <style include="styles-module">
       :host {
         display: block;
         text-align: center;
@@ -58,7 +59,7 @@
     <paper-card elevation="3" animated-shadow="false">
       <div class="card-header">
         <iron-icon icon="account-circle"></iron-icon>
-        Crear cuenta
+        <span class="pink">Crear cuenta</span>
       </div>
 
       <form is="iron-form" id="form">
