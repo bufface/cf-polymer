@@ -1,14 +1,13 @@
-<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-input/paper-input.html">
 
 <dom-module id="hola-cf">
   <template>
     <style>
       :host {
-        background-color: red;
         display: block;
       }
     </style>
-
+    <paper-input label="Nombre" value="{{name}}"></paper-input>
     <h1 id="title">Hola [[name]], tienes [[edad]]</h1>
   </template>
 
@@ -26,28 +25,16 @@
       },
 
       created: function() {
-        console.log("El elemento se creó");
-        console.log(this);
-        console.log(this.$);
-        // console.log(this.$.title);
+      
       },
 
       ready: function() {
-        console.log("El elemento está listo");
-        console.log(this);
-        console.log(this.$);
-        console.log(this.$.title);
+        setTimeout(() => {
+          this.name = "Uno Nuevo"
+        }, 3000)
       },
 
       attached: function() {
-        console.log("El elemento está ya en el documento");
-      },
-
-      detached: function() {
-
-      },
-
-      attributeChanged: function() {
         
       }
     });
