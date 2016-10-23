@@ -9,7 +9,7 @@
       }
     </style>
 
-    <h1>Hola [[name]], tienes [[edad]]</h1>
+    <h1 id="title">Hola [[name]], tienes [[edad]]</h1>
   </template>
 
   <script>
@@ -23,6 +23,32 @@
         edad: {
           type: Number
         }
+      },
+
+      created: function() {
+        console.log("El elemento se creó");
+        console.log(this);
+        console.log(this.$);
+        // console.log(this.$.title);
+      },
+
+      ready: function() {
+        console.log("El elemento está listo");
+        console.log(this);
+        console.log(this.$);
+        console.log(this.$.title);
+      },
+
+      attached: function() {
+        console.log("El elemento está ya en el documento");
+      },
+
+      detached: function() {
+
+      },
+
+      attributeChanged: function() {
+        
       }
     });
   </script>
