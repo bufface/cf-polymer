@@ -1,35 +1,20 @@
 <link rel="import" href="../polymer/polymer.html">
 
-<!--
-`hola-cf`
-
-
-@demo demo/index.html 
--->
-
 <dom-module id="hola-cf">
   <template>
     <style>
       :host {
+        background-color: red;
         display: block;
       }
     </style>
-    <h2>Hello [[prop1]]</h2>
-    <content></content>
+
+    <h1>Hola Mundo</h1>
   </template>
 
   <script>
     Polymer({
-
       is: 'hola-cf',
-
-      properties: {
-        prop1: {
-          type: String,
-          value: 'World!',
-        },
-      },
-
     });
   </script>
 </dom-module>
