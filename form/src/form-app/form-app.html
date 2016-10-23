@@ -7,6 +7,7 @@
 <link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
 <link rel="import" href="../../bower_components/iron-form/iron-form.html">
 <link rel="import" href="./hidding-behavior.html">
+<link rel="import" href="./form-button.html">
 
 <dom-module id="form-app">
   <template>
@@ -14,6 +15,12 @@
       :host {
         display: block;
         text-align: center;
+        --form-button-theme: {
+          background-color: red;
+          color: white;
+          border: "none";
+          border-radius: 5px;
+        };
       }
 
       paper-card {
@@ -61,8 +68,7 @@
         </div>
         
         <div class="card-actions">
-          <paper-button raised id="login">Enviar</paper-button>
-          <paper-button>Cancelar</paper-button>
+          <form-button></form-button>
         </div>
       </form>
     </paper-card>
@@ -84,9 +90,7 @@
       behaviors: [FormApp.Hidding],
 
       ready: function() {
-        this.$.login.addEventListener("click", () => {
-          this.$.form.submit();
-        });
+        
       },
 
       _emailChange: function(new_value, old_value) {
