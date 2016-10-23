@@ -9,12 +9,21 @@
       }
     </style>
 
-    <h1>Hola Mundo</h1>
+    <h1>Hola [[name]], tienes [[edad]]</h1>
   </template>
 
   <script>
     Polymer({
       is: 'hola-cf',
+      properties: {
+        name: {
+          type: String,
+          value: "default"
+        },
+        edad: {
+          type: Number
+        }
+      }
     });
   </script>
 </dom-module>
