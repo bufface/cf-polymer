@@ -32,7 +32,24 @@
 
   <script>
     Polymer({
-      is: 'impressive-form'
+      is: 'impressive-form',
+
+       properties: {
+        collection: {
+          type: Array,
+          notify: true
+        }
+      },
+
+      addSnippet: function() {
+        var codeObj = {
+          description: this.$.descripcion.value,
+          code: this.$.codigo.value,
+          lang: this.$.lenguaje.value
+        };
+
+        this.push('collection', codeObj);
+      }
     });
   </script>
 </dom-module>
