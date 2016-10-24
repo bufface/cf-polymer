@@ -1,6 +1,7 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-card/paper-card.html">
 <link rel="import" href="../../bower_components/paper-styles/default-theme.html">
+<link rel="import" href="./impressive-code.html">
 
 <dom-module id="impressive-collection">
   <template>
@@ -19,7 +20,7 @@
       
       <paper-card heading="{{code.description}}" elevation="1" animated-shadow="false">
         <div class="card-content">
-          {{code.code}}
+          <impressive-code code="{{code.code}}" lang="{{code.lang}}"></impressive-code>
         </div>
       </paper-card>
       
